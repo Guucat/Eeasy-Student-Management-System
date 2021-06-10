@@ -4,6 +4,7 @@ import java.sql.ResultSet;
 import java.sql.SQLException;
 
 import com.dao.UserDao;
+import com.entity.User;
 import com.util.BaseDao;
 
 public class UserDaoImpl extends BaseDao implements UserDao {
@@ -24,6 +25,13 @@ public class UserDaoImpl extends BaseDao implements UserDao {
 		}
 
 		
+	}
+
+	@Override
+	public int addUser(User user) throws ClassNotFoundException, SQLException {
+		String sql = "INSERT INTO user (user_name,pwd) VALUES (?,?)";
+		int num = modifyDate(sql, new Object[] {user.getUser_name(),user.getPwd()});
+		return num;
 	}
 }
 	

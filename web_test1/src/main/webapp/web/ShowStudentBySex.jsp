@@ -30,5 +30,6 @@
 	</tr>	
 	</c:forEach>
 </table>
+<input type="button" name="Submit" value="返回" onclick="javascript:history.back()" />
 </body>
 </html>

@@ -1,6 +1,11 @@
 package com.entity;
 
 public class User {
+	public User(String user_name, String pwd) {
+		super();
+		this.user_name = user_name;
+		this.pwd = pwd;
+	}
 	private String user_name;
 	private String pwd;
 	

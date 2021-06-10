@@ -68,7 +68,7 @@ public class StudentDaoImpl  extends BaseDao implements StudentDao{
 
 	@Override
 	public List<Student> getRankBySex(String sex) throws ClassNotFoundException, SQLException {
-		String sql = "SELECT * FROM student WHERE sex =?";
+		String sql = "SELECT * FROM student WHERE sex=? ORDER BY (chinese + math + english) DESC;";
 		ResultSet rs = this.getData(sql, new Object[] {sex});
 		List<Student> list = new ArrayList<Student>();
 		while(rs.next()) {
@@ -87,8 +87,14 @@ public class StudentDaoImpl  extends BaseDao implements StudentDao{
 
 	@Override
 	public List<Student> getRankBySubject(String subject) throws ClassNotFoundException, SQLException {
-		String sql = "SELECT * FROM student ORDER BY ? DESC";
-		ResultSet rs = this.getData(sql,new Object[] {subject});
+		String sql_math = "SELECT * FROM student ORDER BY math DESC";
+		String sql_chinese = "SELECT * FROM student ORDER BY chinese DESC";
+		String sql_english = "SELECT * FROM student ORDER BY english DESC";
+		ResultSet rs = null;
+		if(subject.equals("chinese")) {  rs = this.getData(sql_chinese,new Object[] {});}
+		if(subject.equals("english")) {  rs = this.getData(sql_english,new Object[] {});}
+		if(subject.equals("math")) {  rs = this.getData(sql_math,new Object[] {});}
+		//System.out.println(subject);
 		List<Student> list = new ArrayList<Student>();
 		while(rs.next()) {
 			Student s = new Student();

@@ -2,6 +2,8 @@ package com.dao;
 
 import java.sql.SQLException;
 
+import com.entity.User;
+
 public interface UserDao {
 	/**
 	 * 
@@ -12,4 +14,6 @@ public interface UserDao {
 	 * @throws SQLException 
 	 */
 	public boolean login(String user,String pwd) throws ClassNotFoundException, SQLException;
+	
+	public int addUser(User user) throws ClassNotFoundException, SQLException;
 }

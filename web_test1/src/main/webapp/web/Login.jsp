@@ -13,7 +13,11 @@ String path = request.getContextPath();
 <form action="<%=path %>/Login" method="post">
 用户名：<input type=text name=user>
 密码：<input type=password	 name=pwd>
-<input type="submit" value="登录">
+<br/>
+<input type=submit value="登录">
+</form>
+<form action="<%=path%>/web/AddOneUser.jsp" method="post">
+<input type=submit value="注册" >
 </form>
 </body>
 </html>

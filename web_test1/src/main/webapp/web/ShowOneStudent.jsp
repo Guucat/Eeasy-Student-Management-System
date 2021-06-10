@@ -13,7 +13,7 @@ String path = request.getContextPath();
 <%
 %>
 <form action="<%=path %>/UpdateStudentInfoServlet">
-学号<input type="text" name="student_id"  readonly="readonly"  value="${student.student_id}(不可修改)">
+学号<input type="text" name="student_id"  readonly="readonly"  value="${student.student_id}">
 姓名<input type="text" name="name" value="${student.name}">
 性别<input type="text" name="sex" value="${student.sex}">
 <br/>
@@ -22,7 +22,7 @@ String path = request.getContextPath();
 数学<input type="text" name="math" value="${student.math}">
 英语<input type="text" name="english" value="${student.english}">
 <br/>
-<input type="submit" value="确认修改">
+<input type="submit" value="确认修改">(学号不可修改)
 </form>
 </body>
 </html>

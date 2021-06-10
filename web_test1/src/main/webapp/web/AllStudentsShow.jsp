@@ -13,7 +13,7 @@ String path = request.getContextPath();
 </head>
 <body>
 
-当前用户：   <%out.print(session.getAttribute("user").toString()); %>
+登录成功，当前用户：   <%out.print(session.getAttribute("user").toString()); %>
 <br/>
 <br/>
 <!-- 

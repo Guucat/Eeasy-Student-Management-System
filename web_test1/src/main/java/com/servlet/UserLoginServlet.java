@@ -29,12 +29,13 @@ public class UserLoginServlet extends HttpServlet{
 	protected void doPost(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
 			String user = request.getParameter("user");
 			String pwd = request.getParameter("pwd");
-			System.out.println(pwd);
+			//String submit = request.getParameter("submit");
+			//System.out.println(submit);
 			UserService us = new UserServiceImpl();
 			try {
-				System.out.println(us.login(user, pwd));
+				//System.out.println(us.login(user, pwd));
 				if(us.login(user, pwd)) {
-					System.out.println(us.login(user, pwd));
+					//System.out.println(us.login(user, pwd));
 					request.getSession().setAttribute("user", user);
 					//request.getRequestDispatcher("/web/LoginSuccess.jsp").forward(request, response);
 					//request.getRequestDispatcher("/GetAllStudents").forward(request, response);
